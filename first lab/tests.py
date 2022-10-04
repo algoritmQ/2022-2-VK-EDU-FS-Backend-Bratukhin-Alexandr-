@@ -5,7 +5,7 @@ class TicTacGame_tasts(unittest.TestCase):
 
     def test_validate_input(self):
         self.assertEqual(TicTacGame.validate_input(self, -5, 1), False)
-        self.assertEqual(TicTacGame.validate_input(self, 'wtf', 1), False)
+        self.assertEqual(TicTacGame.validate_input(self, 'wf', 1), False)
         self.assertEqual(TicTacGame.validate_input(self, 20, 1), False)
 
     def test_check_winner_1(self):
@@ -37,3 +37,6 @@ class TicTacGame_tasts(unittest.TestCase):
 
     def test_check_winner_10(self):
         self.assertEqual(TicTacGame.check_winner(self, ['X', 'X', 'O', 'X', 'O', 6, 'O', 8, 9]), "O")
+
+    def test_check_winner_11(self):#проверка на ничью
+        self.assertEqual(TicTacGame.check_winner(self, ['O', 'X', 'X', 'X', 'X', 'O', 'O', '0', 'X']), "")
